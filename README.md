@@ -10,7 +10,7 @@
  * Angular Js
  * WebSql
 
-[Live Preview](http://todo.learn24bd.com)
+[Live Preview](http://learn24bd.com/angular-websql)
 
 ##### Portfolio
 Welcome to my [My Portfolio](http://learn24bd.com/my_world)
