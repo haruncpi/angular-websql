@@ -1,0 +1,23 @@
+@import url(https://fonts.googleapis.com/css?family=Passion+One);
+body {
+  background: #f3f3f3;
+}
+.navbar-brand {
+  font-family: 'Passion One', cursive;
+  padding-top: 14px;
+  font-size: 30px;
+}
+.mybudge {
+  width: 130px;
+  padding: 6px;
+  border-radius: 4px;
+  font-size: 12px;
+}
+.green {
+  background: #2ecc71;
+  color: white;
+}
+.red {
+  background: #e74c3c;
+  color: white;
+}
