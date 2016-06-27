@@ -1,7 +1,7 @@
 myApp.controller('TodoController', function($scope, $db) {
     $scope.init = function() {
         $scope.todos = [];
-        var query = "SELECT * FROM todos order by id desc";
+        var query = "SELECT * FROM todos";
         $db.query(query).then(function(results) {
             // console.log(results);
             for (var i = 0; i < results.rows.length; i++) {
@@ -10,11 +10,18 @@ myApp.controller('TodoController', function($scope, $db) {
         });
     }
     $scope.insert = function(todo) {
-        console.log(todo);
-        $db.query("INSERT INTO todos(task,status) values(?,0)", [todo.task]).then(function() {
-            $scope.Todo = null;
-            $scope.init();
-        });
+        if(angular.isUndefined(todo) || todo === null)
+        {
+            return;
+        }
+        else
+        {
+            // console.log(todo);
+            $db.query("INSERT INTO todos(task,status) values(?,0)", [todo.task]).then(function() {
+                $scope.Todo = null;
+                $scope.init();
+            });
+        }
     }
     $scope.selected = {}
         // gets the template to ng-include for a table row / item

@@ -14,7 +14,10 @@
                                     <label class="sr-only" for="">
                                         Add New Task
                                     </label>
-                                    <input class="form-control input-sm" ng-model="Todo.task" placeholder="Task Name" required="" type="text">
+                                    <input class="form-control input-sm" 
+                                    ng-model="Todo.task" placeholder="Task Name" 
+                                    type="text" autofocus 
+                                    ng-enter="insert(Todo)">
                                     </input>
                                 </div>
                                 <button class="btn btn-warning btn-sm" ng-click="insert(Todo)">
@@ -36,7 +39,7 @@
                             <thead>
                                 <tr>
                                     <th width="5%">
-                                        ID
+                                        SL
                                     </th>
                                     <th width="65%">
                                         TASK
@@ -50,13 +53,12 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr ng-include="getTemplate(todo)" ng-repeat="todo in todos">
-                                </tr>
+                                <tr ng-include="getTemplate(todo)" ng-repeat="todo in todos"></tr>
                             </tbody>
                         </table>
                         <!--DISPLAY TEMPLETE-->
                         <script id="display" type="text/ng-template">
-                            <td>{{todo.id}}</td>
+                            <td>{{$index+1}}</td>
                         <td>
                         	<del ng-show="todo.status">{{todo.task}}</del>
                         	<span ng-hide="todo.status">{{todo.task}}</span>
